@@ -50,14 +50,14 @@ Create a DataFrame that lists the average reading score for students of each gra
 ### Scores by School Spending
 Create a table that breaks down school performance based on average spending ranges (per student).
 
-Use the code provided below to create four bins with reasonable cutoff values to group school spending.
+Create four bins with reasonable cutoff values to group school spending as follows:
 
     spending_bins = [0, 585, 630, 645, 680]
     labels = ["<$585", "$585-630", "$630-645", "$645-680"]
 
 Use `pd.cut` to categorize spending based on the bins.
 
-Use the following code to then calculate mean scores per spending range.
+Calculate mean scores per spending range as follows:
 
     spending_math_scores = school_spending_df.groupby(["Spending Ranges (Per Student)"])["Average Math Score"].mean()
     spending_reading_scores = school_spending_df.groupby(["Spending Ranges (Per Student)"])["Average Reading Score"].mean()
@@ -65,30 +65,26 @@ Use the following code to then calculate mean scores per spending range.
     spending_passing_reading = school_spending_df.groupby(["Spending Ranges (Per Student)"])["% Passing Reading"].mean()
     overall_passing_spending = school_spending_df.groupby(["Spending Ranges (Per Student)"])["% Overall Passing"].mean()
 
-Use the scores above to create a DataFrame called spending_summary.
+Use the scores referenced above to create a DataFrame called `spending_summary`.
 
-Include the following metrics in the table:
+Elements:
+- Average math score
+- Average reading score
+- % passing math (the percentage of students who passed math)
+- % passing reading (the percentage of students who passed reading)
+- % overall passing (the percentage of students who passed math AND reading)
 
-Average math score
+### Scores by School Size
+Bin the `per_school_summary` as follows:
 
-Average reading score
+    size_bins = [0, 1000, 2000, 5000]
+    labels = ["Small (<1000)", "Medium (1000-2000)", "Large (2000-5000)"]
 
-% passing math (the percentage of students who passed math)
+Use `pd.cut` on the "Total Students" column of the `per_school_summary` DataFrame.
 
-% passing reading (the percentage of students who passed reading)
+Create a DataFrame called `size_summary` that breaks down school performance based on school size (small, medium, or large).
 
-% overall passing (the percentage of students who passed math AND reading)
-
-Scores by School Size
-Use the following code to bin the per_school_summary.
-
-size_bins = [0, 1000, 2000, 5000]
-labels = ["Small (<1000)", "Medium (1000-2000)", "Large (2000-5000)"]
-Use pd.cut on the "Total Students" column of the per_school_summary DataFrame.
-
-Create a DataFrame called size_summary that breaks down school performance based on school size (small, medium, or large).
-
-Scores by School Type
-Use the per_school_summary DataFrame from the previous step to create a new DataFrame called type_summary.
+### Scores by School Type
+Use the `per_school_summary` DataFrame from the previous step to create a new DataFrame called `type_summary`.
 
 This new DataFrame should show school performance based on the "School Type".
