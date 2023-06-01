@@ -16,6 +16,8 @@ Elements:
 - % passing reading (the percentage of students who passed reading)
 - % overall passing (the percentage of students who passed math AND reading)
 
+![District Summary](/images/district_summary.png)
+
 ### School Summary
 Perform the necessary calculations and then create a DataFrame that summarizes key metrics about each school.
 
@@ -31,21 +33,31 @@ Elements:
 - % passing reading (the percentage of students who passed reading)
 - % overall passing (the percentage of students who passed math AND reading)
 
+![School Summary](/images/school_summary.png)
+
 ### Highest-Performing Schools (by % Overall Passing)
 Sort the schools by `% Overall Passing` in descending order and display the top 5 rows.
 
 Save the results in a DataFrame called "top_schools".
+
+![Top Schools](/images/top_schools.png)
 
 ### Lowest-Performing Schools (by % Overall Passing)
 Sort the schools by `% Overall Passing` in ascending order and display the top 5 rows.
 
 Save the results in a DataFrame called "bottom_schools".
 
+![Bottom Schools](/images/bottom_schools.png)
+
 ### Math Scores by Grade
 Perform the necessary calculations to create a DataFrame that lists the average math score for students of each grade level (9th, 10th, 11th, 12th) at each school.
 
+![Math Scores by Grade](/images/math.png)
+
 ### Reading Scores by Grade
 Create a DataFrame that lists the average reading score for students of each grade level (9th, 10th, 11th, 12th) at each school.
+
+![Reading Scores by Grade](/images/reading.png)
 
 ### Scores by School Spending
 Create a table that breaks down school performance based on average spending ranges (per student).
@@ -74,6 +86,8 @@ Elements:
 - % passing reading (the percentage of students who passed reading)
 - % overall passing (the percentage of students who passed math AND reading)
 
+![Scores by School Spending](/images/spending.png)
+
 ### Scores by School Size
 Bin the `per_school_summary` as follows:
 
@@ -84,7 +98,11 @@ Use `pd.cut` on the "Total Students" column of the `per_school_summary` DataFram
 
 Create a DataFrame called `size_summary` that breaks down school performance based on school size (small, medium, or large).
 
+![Scores by School Size](/images/size.png)
+
 ### Scores by School Type
 Use the `per_school_summary` DataFrame from the previous step to create a new DataFrame called `type_summary`.
 
-This new DataFrame should show school performance based on the "School Type".
+This new DataFrame shows school performance based on the "School Type".
+
+![Scores by School Type](/images/type.png)
